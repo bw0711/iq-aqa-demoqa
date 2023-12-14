@@ -1,2 +1,2 @@
 # iq-aqa-demoqa
-playwright
+learn repo for playwright tests
