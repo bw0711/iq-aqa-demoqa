@@ -1,10 +1,23 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
+    "lib": ["ES2020", "DOM"],
+    "types": ["node"],
+    "module": "NodeNext",
+    "target": "ES2020",
+    "baseUrl": ".",
+    "rootDir": "./",
+    "allowUnreachableCode": false,
+    "experimentalDecorators": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "paths": {}
+  },
+  "include": ["./**//**/**/*.ts"],
+  "lib": ["esnext"],
+  "ts-node": {
+    "esm": true
   }
 }
