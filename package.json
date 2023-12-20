@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "learn repo for playwright tests",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "lint": "prettier --write --config .prettierrc.json ."
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.40.1",
     "@types/node": "^20.10.4",
+    "prettier": "3.1.1",
     "typescript": "^5.3.3"
   },
   "dependencies": {
