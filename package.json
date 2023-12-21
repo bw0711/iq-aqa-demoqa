@@ -4,7 +4,10 @@
   "description": "learn repo for playwright tests",
   "main": "index.js",
   "scripts": {
-    "lint": "prettier --write --config .prettierrc.json ."
+    "lint": "prettier --write --config .prettierrc.json .",
+    "test:headed": "npx playwright test --headed",
+    "test:headless": "npx playwright test",
+    "test:debug": "npx playwright test --ui"
   },
   "keywords": [],
   "author": "",
