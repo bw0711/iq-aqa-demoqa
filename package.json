@@ -4,7 +4,9 @@
   "description": "learn repo for playwright tests",
   "main": "index.js",
   "scripts": {
-    "lint": "prettier --write --config .prettierrc.json .",
+    "prettier": "prettier --write --config .prettierrc.json .",
+    "lint": "eslint .",
+    "lint:fix": " eslint . --fix",
     "test:headed": "npx playwright test --headed",
     "test:headless": "npx playwright test",
     "test:debug": "npx playwright test --ui"
@@ -15,6 +17,9 @@
   "devDependencies": {
     "@playwright/test": "^1.40.1",
     "@types/node": "^20.10.4",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
     "prettier": "3.1.1",
     "typescript": "^5.3.3"
   },

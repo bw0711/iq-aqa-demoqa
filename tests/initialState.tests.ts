@@ -1,11 +1,15 @@
 import { test, expect } from '@playwright/test';
+import { BasePage } from 'po/pages/base.page';
 
 test('Check initial state', async ({ page }) => {
-  await page.goto('/');
+  const basePage = new BasePage(page);
 
-  const expectedTexts = ['Elements', 'Forms', 'Alerts, Frame & Windows', 'Widgets', 'Interactions', 'Book Store Application'];
+  await basePage.navigateToHomePage();
 
-  for (const text of expectedTexts) {
-    await expect(page.locator(`text=${text}`)).toBeVisible();
-  }
+  await expect(basePage.elementsPage).toBeVisible();
+  await expect(basePage.formsPage).toBeVisible();
+  await expect(basePage.afwPage).toBeVisible();
+  await expect(basePage.widgetsPage).toBeVisible();
+  await expect(basePage.interactionsPage).toBeVisible();
+  await expect(basePage.bookStorePage).toBeVisible();
 });

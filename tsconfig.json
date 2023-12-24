@@ -15,8 +15,7 @@
     "resolveJsonModule": true,
     "paths": {}
   },
-  "include": ["./**//**/**/*.ts"],
-  "lib": ["esnext"],
+  "include": ["./**/*.ts"],
   "ts-node": {
     "esm": true
   }
