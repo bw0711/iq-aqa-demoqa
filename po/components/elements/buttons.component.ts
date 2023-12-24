@@ -1,7 +1,7 @@
-import { BaseComponent } from '../common/base.component';
-import { Locator } from '@playwright/test';
+import { Page, Locator } from '@playwright/test';
 
-export class ButtonsComponent extends BaseComponent {
+export class ButtonsComponent {
+  constructor(private page: Page) { }
 
   public get component(): Locator {
     return this.page.locator('#item-4', { has: this.page.getByText('Buttons') });
