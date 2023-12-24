@@ -136,4 +136,4 @@ dist
 /playwright/.cache/
 
 #vscode
-.vscode
+.vscode/
