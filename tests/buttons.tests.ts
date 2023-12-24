@@ -1,29 +1,26 @@
 import { test, expect } from '@playwright/test';
+import { ElementsPage } from 'po/pages/elements.page';
 
-test.beforeEach(async ({ page }) => {
-  await page.goto('/buttons');
-});
+test.describe('Elements -> Buttons', () => {
+  let elementsPage: ElementsPage;
 
-test('Double Click', async ({ page }) => {
-  const btnLocator = page.locator('[id="doubleClickBtn"]');
-  const btnText = page.locator('[id="doubleClickMessage"]');
+  test.beforeEach(async ({ page }) => {
+    elementsPage = new ElementsPage(page);
+    await elementsPage.navigateToButtonsPage();
+  });
 
-  await btnLocator.dblclick();
-  await expect(btnText).toBeVisible();
-});
+  test('Double Click button', async () => {
+    await elementsPage.buttons.doubleClickBtn.dblclick();
+    await expect(elementsPage.buttons.dcBtnMessage).toBeVisible();
+  });
 
-test('Right Click', async ({ page }) => {
-  const btnLocator = page.locator('[id="rightClickBtn"]');
-  const btnText = page.locator('[id="rightClickMessage"]');
+  test('Right Click button', async () => {
+    await elementsPage.buttons.rightClickBtn.click({ button: 'right' });
+    await expect(elementsPage.buttons.rcBtnMessage).toBeVisible();
+  });
 
-  await btnLocator.click({ button: 'right' });
-  await expect(btnText).toBeVisible();
-});
-
-test('Click Me', async ({ page }) => {
-  const btnLocator = page.locator('.btn-primary').last();
-  const btnText = page.locator('[id="dynamicClickMessage"]');
-
-  await btnLocator.click();
-  await expect(btnText).toBeVisible();
+  test('Click Me button', async () => {
+    await elementsPage.buttons.singleClickBtn.click();
+    await expect(elementsPage.buttons.scBtnMessage).toBeVisible();
+  });
 });
