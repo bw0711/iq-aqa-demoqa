@@ -6,7 +6,7 @@ export class InteractionsPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.category = this.interactionsPage;
+    this.category = this.interactionsLocator;
   }
 
   async navigateToCategory() {

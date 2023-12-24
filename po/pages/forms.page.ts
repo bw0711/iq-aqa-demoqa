@@ -6,7 +6,7 @@ export class FormsPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.category = this.elementsPage;
+    this.category = this.formsLocator;
   }
 
   async navigateToCategory() {

@@ -6,7 +6,7 @@ export class WidgetsPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.category = this.widgetsPage;
+    this.category = this.widgetsLocator;
   }
 
   async navigateToCategory() {

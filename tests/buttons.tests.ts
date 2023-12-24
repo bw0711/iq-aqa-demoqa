@@ -6,26 +6,26 @@ test.describe('Elements -> Buttns', async () => {
     const elementsPage = new ElementsPage(page);
 
     await elementsPage.navigateToButtonsPage();
-    await elementsPage.buttons.doubleClickButton.dblclick();
+    await elementsPage.buttons.doubleClickBtn.dblclick();
 
-    await expect(elementsPage.buttons.doubleClickMessage).toBeVisible();
+    await expect(elementsPage.buttons.dcBtnMessage).toBeVisible();
   });
 
   test('Right Click button', async ({ page }) => {
     const elementsPage = new ElementsPage(page);
 
     await elementsPage.navigateToButtonsPage();
-    await elementsPage.buttons.rightClickButton.click({ button: 'right' });
+    await elementsPage.buttons.rightClickBtn.click({ button: 'right' });
 
-    await expect(elementsPage.buttons.rightClickMessage).toBeVisible();
+    await expect(elementsPage.buttons.rcBtnMessage).toBeVisible();
   });
 
   test('Click Me button', async ({ page }) => {
     const elementsPage = new ElementsPage(page);
 
     await elementsPage.navigateToButtonsPage();
-    await elementsPage.buttons.singleClickButton.click();
+    await elementsPage.buttons.singleClickBtn.click();
 
-    await expect(elementsPage.buttons.singleClickMessage).toBeVisible();
+    await expect(elementsPage.buttons.scBtnMessage).toBeVisible();
   });
 });

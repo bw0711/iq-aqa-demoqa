@@ -6,7 +6,7 @@ export class BookStorePage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.category = this.bookStorePage;
+    this.category = this.bookStoreLocator;
   }
 
   async navigateToCategory() {

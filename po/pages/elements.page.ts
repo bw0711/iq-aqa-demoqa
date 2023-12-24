@@ -8,7 +8,7 @@ export class ElementsPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.category = this.elementsPage;
+    this.category = this.elementsLocator;
     this.buttons = new ButtonsComponent(page);
   }
 

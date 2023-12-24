@@ -6,7 +6,7 @@ export class AfwPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.category = this.afwPage;
+    this.category = this.afwLocator;
   }
 
   async navigateToCategory() {

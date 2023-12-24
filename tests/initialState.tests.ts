@@ -6,10 +6,10 @@ test('Check initial state', async ({ page }) => {
 
   await basePage.navigateToHomePage();
 
-  await expect(basePage.elementsPage).toBeVisible();
-  await expect(basePage.formsPage).toBeVisible();
-  await expect(basePage.afwPage).toBeVisible();
-  await expect(basePage.widgetsPage).toBeVisible();
-  await expect(basePage.interactionsPage).toBeVisible();
-  await expect(basePage.bookStorePage).toBeVisible();
+  await expect(basePage.elementsLocator).toBeVisible();
+  await expect(basePage.formsLocator).toBeVisible();
+  await expect(basePage.afwLocator).toBeVisible();
+  await expect(basePage.widgetsLocator).toBeVisible();
+  await expect(basePage.interactionsLocator).toBeVisible();
+  await expect(basePage.bookStoreLocator).toBeVisible();
 });

@@ -1,55 +1,37 @@
 import { BaseComponent } from '../common/base.component';
-import { Locator, Page } from '@playwright/test';
+import { Locator } from '@playwright/test';
 
 export class ButtonsComponent extends BaseComponent {
-  private componentLocator: Locator;
-  private doubleClickBtnLocator: Locator;
-  private rightClickBtnLocator: Locator;
-  private singleClickBtnLocator: Locator;
-  private dcBtnMessage: Locator;
-  private rcBtnMessage: Locator;
-  private scBtnMessage: Locator;
 
-  constructor(page: Page) {
-    super(page);
-    this.componentLocator = page.locator('#item-4', { has: page.getByText('Buttons') });
-    this.doubleClickBtnLocator = page.locator('[id="doubleClickBtn"]');
-    this.rightClickBtnLocator = page.locator('[id="rightClickBtn"]');
-    this.singleClickBtnLocator = page.locator('.btn-primary').last();
-    this.dcBtnMessage = page.locator('[id="doubleClickMessage"]');
-    this.rcBtnMessage = page.locator('[id="rightClickMessage"]');
-    this.scBtnMessage = page.locator('[id="dynamicClickMessage"]');
+  public get component(): Locator {
+    return this.page.locator('#item-4', { has: this.page.getByText('Buttons') });
   }
 
-  public get locator(): Locator {
-    return this.componentLocator;
+  public get doubleClickBtn(): Locator {
+    return this.page.locator('[id="doubleClickBtn"]');
   }
 
-  public get doubleClickButton() {
-    return this.doubleClickBtnLocator;
+  public get rightClickBtn(): Locator {
+    return this.page.locator('[id="rightClickBtn"]');
   }
 
-  public get rightClickButton() {
-    return this.rightClickBtnLocator;
+  public get singleClickBtn(): Locator {
+    return this.page.locator('.btn-primary').last();
   }
 
-  public get singleClickButton() {
-    return this.singleClickBtnLocator;
+  public get dcBtnMessage(): Locator {
+    return this.page.locator('[id="doubleClickMessage"]');
   }
 
-  public get doubleClickMessage(): Locator {
-    return this.dcBtnMessage;
+  public get rcBtnMessage(): Locator {
+    return this.page.locator('[id="rightClickMessage"]');
   }
 
-  public get rightClickMessage(): Locator {
-    return this.rcBtnMessage;
-  }
-
-  public get singleClickMessage(): Locator {
-    return this.scBtnMessage;
+  public get scBtnMessage(): Locator {
+    return this.page.locator('[id="dynamicClickMessage"]');
   }
 
   async navigateToComponent() {
-    await this.componentLocator.click();
+    await this.component.click();
   }
 }
