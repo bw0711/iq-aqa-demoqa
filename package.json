@@ -9,6 +9,7 @@
     "lint:fix": " eslint . --fix",
     "test:headed": "npx playwright test --headed",
     "test:headless": "npx playwright test",
+    "test:headless:ci": "npx playwright test --reporter=html",
     "test:debug": "npx playwright test --ui"
   },
   "keywords": [],
