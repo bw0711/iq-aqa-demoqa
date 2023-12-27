@@ -12,10 +12,6 @@ export class BookStorePage extends BasePage {
     this.loginPage = new LoginComponent(page);
   }
 
-  // public get loggedUserNameValue(): Promise<string> {
-  //   return this.page.locator('#userName-value').textContent() || ''; 
-  // }
-
   async loggedUserNameValue(): Promise<string> {
     const textContent = await this.page.locator('#userName-value').textContent();
     return textContent || '';
