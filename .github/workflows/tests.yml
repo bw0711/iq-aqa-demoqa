@@ -28,7 +28,7 @@ jobs:
       env:
         USERNAME: ${{ secrets.USERNAME }}
         PASSWORD: ${{ secrets.PASSWORD }}
-        BASE_URL: ${{ secrets.BASE_URL }}
+        BASE_URL: ${{ env.BASE_URL }}
       run: npm run test:headless:ci
 
     - name: Upload report as an artifact
