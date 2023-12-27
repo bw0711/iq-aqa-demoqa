@@ -32,7 +32,7 @@ export class BasePage {
   }
 
   protected async navigateTo(url: string) {
-    await this.page.goto(url, { waitUntil: 'domcontentloaded' });
+    await this.page.goto(url);
   }
 
   async navigateToHomePage() {
