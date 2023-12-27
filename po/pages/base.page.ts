@@ -1,7 +1,7 @@
 import { Page, Locator } from '@playwright/test';
 
 export class BasePage {
-  protected page: Page;
+  protected readonly page: Page;
 
   constructor(page: Page) {
     this.page = page;
@@ -31,11 +31,11 @@ export class BasePage {
     return this.page.locator('.card-body', { has: this.page.getByText('Book Store Application') });
   }
 
-  protected async navigateTo(url: string) {
+  private async navigateTo(url: string) {
     await this.page.goto(url);
   }
 
-  async navigateToHomePage() {
-    await this.navigateTo('/');
+  public async navigateToHomePage() {
+    return this.navigateTo('/');
   }
 }

@@ -1,7 +1,7 @@
 import { Page, Locator } from '@playwright/test';
 
 export class LoginComponent {
-  constructor(private page: Page) {}
+  constructor(private readonly page: Page) {}
 
   public get component(): Locator {
     return this.page.locator('#item-0', { has: this.page.getByText('Login') });
@@ -23,7 +23,7 @@ export class LoginComponent {
     return this.page.locator('#newUser');
   }
 
-  async navigateToComponent() {
-    await this.component.click();
+  public async navigateToComponent() {
+    return this.component.click();
   }
 }

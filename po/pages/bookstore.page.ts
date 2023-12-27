@@ -3,8 +3,8 @@ import { BasePage } from './base.page';
 import { LoginComponent } from 'po/components/elements/login.components';
 
 export class BookStorePage extends BasePage {
-  readonly category: Locator;
-  readonly loginPage: LoginComponent;
+  private readonly category: Locator;
+  public readonly loginPage: LoginComponent;
 
   constructor(page: Page) {
     super(page);
@@ -12,24 +12,24 @@ export class BookStorePage extends BasePage {
     this.loginPage = new LoginComponent(page);
   }
 
-  async loggedUserNameValue(): Promise<string> {
+  public async loggedUserNameValue(): Promise<string> {
     const textContent = await this.page.locator('#userName-value').textContent();
-    return textContent || '';
+    return textContent;
   }
 
-  async navigateToCategory() {
+  public async navigateToCategory() {
     await this.navigateToHomePage();
     await this.category.click();
   }
 
-  async navigateToLoginPage() {
+  public async navigateToLoginPage() {
     await this.navigateToCategory();
     await this.loginPage.navigateToComponent();
   }
 
-  async loginUser() {
-    await this.loginPage.userNameField.fill(process.env.USERNAME || '');
-    await this.loginPage.passwordField.fill(process.env.PASSWORD || '');
+  public async loginUser() {
+    await this.loginPage.userNameField.fill(process.env.USERNAME);
+    await this.loginPage.passwordField.fill(process.env.PASSWORD);
     await this.loginPage.loginButton.click();
   }
 }
