@@ -1,4 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv'
+dotenv.config();
 
 export default defineConfig({
   testDir: './tests',
@@ -6,10 +8,10 @@ export default defineConfig({
   fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
-  workers: process.env.CI ? 1 : 2,
-  reporter: [['html', { open: 'never' }]],
+  workers: process.env.CI ? 1 : 1,
+  reporter: 'line',
   use: {
-    baseURL: 'https://demoqa.com/',
+    baseURL: process.env.BASE_URL,
     trace: {
       mode: 'retain-on-failure',
     },
