@@ -1,7 +1,7 @@
 import { Page, Locator } from '@playwright/test';
 
 export class ButtonsComponent {
-  constructor(private page: Page) {}
+  constructor(private readonly page: Page) {}
 
   public get component(): Locator {
     return this.page.locator('#item-4', { has: this.page.getByText('Buttons') });
@@ -31,7 +31,7 @@ export class ButtonsComponent {
     return this.page.locator('[id="dynamicClickMessage"]');
   }
 
-  async navigateToComponent() {
-    await this.component.click();
+  public async navigateToComponent() {
+    return this.component.click();
   }
 }

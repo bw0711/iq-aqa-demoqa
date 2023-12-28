@@ -3,8 +3,8 @@ import { ButtonsComponent } from 'po/components/elements/buttons.component';
 import { Locator, Page } from '@playwright/test';
 
 export class ElementsPage extends BasePage {
-  readonly category: Locator;
-  readonly buttons: ButtonsComponent;
+  private readonly category: Locator;
+  public readonly buttons: ButtonsComponent;
 
   constructor(page: Page) {
     super(page);
@@ -12,12 +12,12 @@ export class ElementsPage extends BasePage {
     this.buttons = new ButtonsComponent(page);
   }
 
-  async navigateToCategory() {
+  public async navigateToCategory() {
     await this.navigateToHomePage();
     await this.category.click();
   }
 
-  async navigateToButtonsPage() {
+  public async navigateToButtonsPage() {
     await this.navigateToCategory();
     await this.buttons.navigateToComponent();
   }
