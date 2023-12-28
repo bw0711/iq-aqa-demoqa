@@ -13,8 +13,7 @@ export class BookStorePage extends BasePage {
   }
 
   public async loggedUserNameValue(): Promise<string> {
-    const textContent = await this.page.locator('#userName-value').textContent();
-    return textContent;
+    return await this.page.locator('#userName-value').textContent();
   }
 
   public async navigateToCategory() {
