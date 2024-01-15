@@ -138,3 +138,6 @@ dist
 #vscode
 /.vscode
 /.vscode/*
+
+#jetbrains
+.idea/
